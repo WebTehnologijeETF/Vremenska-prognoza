@@ -147,6 +147,7 @@ p{
 
 .nastavi{
     font-size: medium;
+    text-align: right;
 }
 
 .nastaviLink{
@@ -183,7 +184,7 @@ label{
     margin-right: 5%;
     display:inline-block;
     text-align: right;
-    width: 25%;
+    width: 30%;
 }
 
 textarea{
@@ -248,4 +249,70 @@ th, td{
 td{
     color: white;
     text-align: center;
+}
+
+#projekti{
+    width: 45%;
+    height: 93%;
+    margin: 1%;
+    margin-left: 2%;
+    overflow-y: auto;
+    min-width: 300px;
+    overflow-x: hidden;
+    float: left;
+}
+
+#partneri{
+    float: right;
+    width: 42%;
+    height: 100%;
+    margin: 1%;
+    margin-right: 2%;
+}
+
+#partneri h2{
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+    margin-left: -0.01%;
+    color: white;
+}
+
+#listaPartnera{
+    list-style-image: url('Images/partnerSun.ico');
+    margin-left: 2%;
+}
+
+#listaPartnera li{
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+    margin-left: 5%;
+    color: white;
+}
+
+#izborProjekta{
+    width: 90%;
+    height: 90%;
+}
+
+#tekstProjekta{
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 90%;
+    height: 70%;
+    border: medium solid white;
+    text-align: justify;
+}
+
+.labeleprojekta{
+    font-family: 'Rokkitt', serif;
+    color: white;
+    font-weight: bolder;
+    margin-left: 10%;
+    display:inline-block;
+    text-align: right;
+    width: 30%;
+}
+
+span{
+    margin-right: 100px;
 }

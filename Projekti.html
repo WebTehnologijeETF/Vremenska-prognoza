@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Glavni.css">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <title>Projekti</title>
+</head>
+<body>
+<header>
+    <img src="Images/HMZBIH.png" alt="Images/HMZBIH.png" id="logo"> <h1>Hidrometeorološki zavod BiH</h1>
+</header>
+
+<div id="navigateDiv">
+    <br>
+    <nav>
+        <ul>
+            <li><a href="Naslovna.html">Naslovna</a><br></li>
+            <li><a href="Meteorologija.html">Meteorologija</a><br></li>
+            <li><a href="Projekti.html">Projekti</a><br></li>
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="sredina">
+
+    <div id="projekti">
+        <datalist id="mjeseci">
+            <option value="Januar">JAN</option>
+            <option value="Februar">FEB</option>
+            <option value="Mart">MAR</option>
+            <option value="April">APR</option>
+            <option value="Maj">MAJ</option>
+            <option value="Juni">JUN</option>
+            <option value="Juli">JUL</option>
+            <option value="August">AUG</option>
+            <option value="Septembar">SEP</option>
+            <option value="Oktobar">OKT</option>
+            <option value="Novembar">NOV</option>
+            <option value="Decembar">DEC</option>
+        </datalist>
+        <datalist id="projektiLista">
+            <option value="Poplave humanitarna">HUM</option>
+            <option value="Studentska posjeta">STU</option>
+        </datalist>
+        <fieldset id="izborProjekta">
+            <br>
+            <label class="labeleprojekta">Izaberite mjesec</label> <input type="text" list="mjeseci"> <br><br>
+            <label class="labeleprojekta">Izaberite projekat</label> <input type="text" list="projektiLista"> <br><br>
+            <p id="tekstProjekta">Nakon što se izaberu mjesec, a zatim projekat, ovdje će se prikazati informacije o izabranom projektu.</p>
+        </fieldset>
+    </div>
+
+    <div id="partneri">
+        <h2>PARTNERI:</h2>
+        <br>
+        <ul id="listaPartnera">
+            <li><a href="http://fhmzbih.gov.ba/latinica/index.php">Federalni hidrometeorološki zavod</a> </li>
+            <li><a href="http://www.bhrt.ba/">BHRT</a></li>
+            <li><a href="http://www.klix.ba/">Klix.ba</a></li>
+            <li><a href="http://www.accuweather.com/en/ba/bosnia-and-herzegovina-weather">Accuweather.com</a></li>
+            <li><a href="http://www.weather.com/">Weather.com</a></li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

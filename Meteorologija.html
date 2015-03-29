@@ -9,19 +9,16 @@
 <body>
 
 <header>
-    <img src="Images/HMZBIH.png" id="logo"> <h1>Hidrometeorološki zavod BiH</h1>
+    <img src="Images/HMZBIH.png" alt="Images/HMZBIH.png" id="logo"> <h1>Hidrometeorološki zavod BiH</h1>
 </header>
 
 <div id="navigateDiv">
+    <br>
     <nav>
-        <br>
         <ul>
-            <li><a href="Naslovna.html">Naslovna</a></li>
-            <br>
-            <li><a href="Meteorologija.html">Meteorologija</a></li>
-            <br>
-            <li><a href="Hidrologija.html">Hidrologija</a></li>
-            <br>
+            <li><a href="Naslovna.html">Naslovna</a><br></li>
+            <li><a href="Meteorologija.html">Meteorologija</a><br></li>
+            <li><a href="Projekti.html">Projekti</a><br></li>
             <li><a href="Kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
@@ -30,10 +27,10 @@
 <div id="sredina">
     <br>
     <datalist id="listaGradova">
-        <option value="Sarajevo"></option>
-        <option value="Mostar"></option>
-        <option value="Zenica"></option>
-        <option value="Banja Luka"></option>
+        <option value="Sarajevo">FBiH</option>
+        <option value="Mostar">FBiH</option>
+        <option value="Zenica">FBiH</option>
+        <option value="Banja Luka">RS</option>
     </datalist>
     <label>Izaberite sat:</label> <input type="number" id="dnevniSati" min="0" max="24" value="12"> <br><br>
     <label>Izaberite grad:</label> <input type="text" list="listaGradova" id="unosGrada"> <br><br><br>
