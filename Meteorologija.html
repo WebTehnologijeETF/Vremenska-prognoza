@@ -2,9 +2,136 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="Glavni.css">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
     <title>Meteorologija</title>
 </head>
 <body>
+
+<header>
+    <img src="Images/HMZBIH.png" id="logo"> <h1>Hidrometeorološki zavod BiH</h1>
+</header>
+
+<div id="navigateDiv">
+    <nav>
+        <br>
+        <ul>
+            <li><a href="Naslovna.html">Naslovna</a></li>
+            <br>
+            <li><a href="Meteorologija.html">Meteorologija</a></li>
+            <br>
+            <li><a href="Hidrologija.html">Hidrologija</a></li>
+            <br>
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="sredina">
+    <br>
+    <datalist id="listaGradova">
+        <option value="Sarajevo"></option>
+        <option value="Mostar"></option>
+        <option value="Zenica"></option>
+        <option value="Banja Luka"></option>
+    </datalist>
+    <label>Izaberite sat:</label> <input type="number" id="dnevniSati" min="0" max="24" value="12"> <br><br>
+    <label>Izaberite grad:</label> <input type="text" list="listaGradova" id="unosGrada"> <br><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Grad</th>
+                <th>Brzina vjetra (km/h)</th>
+                <th>Smjer vjetra</th>
+                <th>Datum mjerenja</th>
+                <th>Temperatura zraka (C)</th>
+                <th>Relativna lažnost zraka (%)</th>
+                <th>Stanični pritisak (hPa)</th>
+                <th>Tendencija pritiska</th>
+                <th>Vrijeme</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sarajevo</td>
+                <td>2</td>
+                <td>W</td>
+                <td>28.3.2015.</td>
+                <td>10</td>
+                <td>60</td>
+                <td>998.01</td>
+                <td>-0.5</td>
+                <td>Vedro</td>
+            </tr>
+            <tr>
+                <td>Sarajevo</td>
+                <td>3</td>
+                <td>W</td>
+                <td>27.3.2015.</td>
+                <td>12</td>
+                <td>63</td>
+                <td>991.01</td>
+                <td>-0.3</td>
+                <td>Vedro</td>
+            </tr>
+            <tr>
+                <td>Sarajevo</td>
+                <td>4</td>
+                <td>NW</td>
+                <td>26.3.2015.</td>
+                <td>9</td>
+                <td>59</td>
+                <td>1000.01</td>
+                <td>-0.3</td>
+                <td>Oblačno</td>
+            </tr>
+            <tr>
+                <td>Sarajevo</td>
+                <td>4</td>
+                <td>NW</td>
+                <td>25.3.2015.</td>
+                <td>6</td>
+                <td>62</td>
+                <td>1000.04</td>
+                <td>-0.4</td>
+                <td>Kišovito</td>
+            </tr>
+            <tr>
+                <td>Sarajevo</td>
+                <td>3</td>
+                <td>NW</td>
+                <td>24.3.2015.</td>
+                <td>7</td>
+                <td>70</td>
+                <td>998.02</td>
+                <td>-0.4</td>
+                <td>Oblačno</td>
+            </tr>
+            <tr>
+                <td>Sarajevo</td>
+                <td>3</td>
+                <td>W</td>
+                <td>23.3.2015.</td>
+                <td>9</td>
+                <td>63</td>
+                <td>992.04</td>
+                <td>-0.2</td>
+                <td>Vedro</td>
+            </tr>
+            <tr>
+                <td>Sarajevo</td>
+                <td>1</td>
+                <td>W</td>
+                <td>22.3.2015.</td>
+                <td>9</td>
+                <td>60</td>
+                <td>993.02</td>
+                <td>-0.2</td>
+                <td>Vedro</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
