@@ -3,10 +3,12 @@
  */
 
 $(document).ready(function(){
+    $("#rucnaGreska").hide();
+    $(".errorTekst4").hide();
    $(":submit").click(function () {
        var ime = $("#imePrezime");
+       validirajMjesto();
        var prolazi = false;
-
        $.validator.addMethod('onlyLetters', function (value, element, param) {
            var re = new RegExp("^[a-zA-Z]+$");
            if (re.test(value))
@@ -54,9 +56,53 @@ $(document).ready(function(){
                imePrezime: "Molimo unesite pravilno Vaše ime",
                mailAdresa: "Molimo unesite ispravnu mail adresu"
            },
+           unhighlight: function (element) {
+               $(element)
+                   .closest('.form-group').removeClass('has-error');
+           },
            submitHandler: function(form) {
-               form.submit();
+               var doku = $("#rucnaGreska").is(":visible");
+               if (doku == false)
+                form.submit();
            }
-       });
+       }
+       );
    });
 });
+
+function validirajMjesto() {
+    var mjesto = document.getElementById("mjesto");
+    var postanski = document.getElementById("postanski");
+    var xmlhttp;
+
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else
+    {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+            var odgovor = JSON.parse(xmlhttp.responseText);
+            var tacnaPosta = false;
+            if (Object.keys(odgovor)[0] == "ok")
+                tacnaPosta = true;
+            if (tacnaPosta == false)
+            {
+                $("#rucnaGreska").show();
+                $(".errorTekst4").show();
+            }
+            else
+            {
+                $("#rucnaGreska").hide();
+                $(".errorTekst4").hide();
+            }
+        }
+    };
+
+    xmlhttp.open("GET", "http://zamger.etf.unsa.ba/wt/postanskiBroj.php?mjesto=" + mjesto.value + "&postanskiBroj=" + postanski.value, true);
+    xmlhttp.send();
+}

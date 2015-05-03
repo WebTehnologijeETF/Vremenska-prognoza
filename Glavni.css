@@ -171,7 +171,8 @@ fieldset{
 
 #kontaktNaslov{
     text-align: center;
-    padding: 0%;
+    margin-top: -5%;
+    margin-bottom: -5%;
     font-family: 'Rokkitt', serif;
     font-weight: bold;
 }
@@ -322,7 +323,16 @@ img.error{
     width: 25px;
     float: right;
     margin-top: -0.2%;
-    margin-right: 29%;
+    margin-right: 28%;
+}
+
+img.greska{
+    content:url("http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png");
+    height: 25px;
+    width: 25px;
+    float: right;
+    margin-top: -0.2%;
+    margin-right: 28%;
 }
 
 .errorTekst1{
@@ -352,7 +362,14 @@ img.error{
     text-align: center;
 }
 
-
+.errorTekst4{
+    color: #b63636;
+    font-weight: bolder;
+    float: right;
+    margin-top: -2.7%;
+    margin-right: 6%;
+    text-align: center;
+}
 
 .tabs {
     margin-top: 2%;
