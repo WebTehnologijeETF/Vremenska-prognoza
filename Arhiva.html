@@ -9,6 +9,7 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="Tab_Skripta.js"></script>
     <script src="ArhivaStablo.js"></script>
+    <script src="AjaxOtvori.js"></script>
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script>
         $(function() {
@@ -26,11 +27,11 @@
     <br>
     <nav>
         <ul>
-            <li><a href="Naslovna.html">Naslovna</a><br></li>
-            <li><a href="Meteorologija.html">Meteorologija</a><br></li>
-            <li><a href="Projekti.html">Projekti</a><br></li>
-            <li><a href="Kontakt.html">Kontakt</a></li>
-            <li><a href="Arhiva.html">Arhiva</a> </li>
+            <li><a onclick="AjaxOtvori('Naslovna.html')">Naslovna</a><br></li>
+            <li><a onclick="AjaxOtvori('Meteorologija.html')">Meteorologija</a><br></li>
+            <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a><br></li>
+            <li><a onclick="AjaxOtvori('Kontakt.html')">Kontakt</a></li>
+            <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
         </ul>
     </nav>
 </div>
