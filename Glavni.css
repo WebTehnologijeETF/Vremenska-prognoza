@@ -42,10 +42,11 @@ img{
 #sredina {
     margin-left: auto;
     margin-right: 2%;
-    width: 80%;
+    width: 75%;
     background-color: cornflowerblue;
     height: 74%;
     border: medium solid white;
+    overflow-y: auto;
 }
 
 h4{
@@ -371,6 +372,15 @@ img.greska{
     text-align: center;
 }
 
+.errorTekst5{
+    color: #b63636;
+    font-weight: bolder;
+    float: right;
+    margin-top: -2.7%;
+    margin-right: 8%;
+    text-align: center;
+}
+
 .tabs {
     margin-top: 2%;
     margin-left: 5%;
@@ -454,4 +464,47 @@ li.active a, li.active a:hover {
 
 .cetvrtiNivo li{
     text-indent: 90px;
+}
+
+#reklama{
+    text-align: justify;
+    color: white;
+    font-family: 'Rokkitt', serif;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#tabelaProizvoda{
+    table-layout: fixed;
+}
+
+th, td {
+    overflow: hidden;
+    width: 160px;
+}
+
+.produkt{
+    height: 120px;
+}
+
+.produkt td{
+    margin: auto;
+    font-size: x-large;
+}
+
+#submitButton2{
+    margin-left: 35.3%;
+    width: 10%;
+    height: 30px;
+    font-family: 'Rokkitt', serif;
+    font-size: large;
+    color: darkblue;
+}
+
+.submitButton34{
+    width: 10%;
+    height: 30px;
+    font-family: 'Rokkitt', serif;
+    font-size: large;
+    color: darkblue;
 }

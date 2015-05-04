@@ -2,9 +2,100 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="Glavni.css">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+    <script src="AjaxOtvori.js"></script>
+    <script src="ProduktValidacija.js"></script>
     <title>Hidrologija</title>
 </head>
+
+<header>
+    <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
+</header>
+
+<div id="navigateDiv">
+    <br>
+    <nav>
+        <ul>
+            <li><a onclick="AjaxOtvori('Naslovna.html')">Naslovna</a></li>
+            <li><a onclick="AjaxOtvori('Meteorologija.html')">Meteorologija</a></li>
+            <li><a onclick="AjaxOtvori('Hidrologija.html')">Hidrologija</a></li>
+            <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a></li>
+            <li><a onclick="AjaxOtvori('Kontakt.html')">Kontakt</a></li>
+            <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
+        </ul>
+    </nav>
+</div>
+
 <body>
 
+    <div id="sredina">
+        <br>
+        <p id="reklama">Odjel za meteorologiju trenutno izlazi na kraj s određenim tehničkim problemima s opremom. Međutim, da Vaš klik na ovu stranicu ne bi ostao uzaludan, slijedi par zanimljivih činjenica o vodi.
+            Postoje dvije podjele vode. Prva, koja nalaže da postoje dvije vrste vode: slana i pitka voda. Slana voda sadrži velike količine soli, dok je u pitkoj vodi so razgrađena na manje od 1%, stoga
+            se samo ona može koristiti za piće. I druga, koja razlikuje domaću i stranu vodu. Domaća voda je ukrašena ambalažom sa bar kodom, koji završava ciframa 387, dok strana voda nije ukrašena takvom
+            ambalažom. Mi toplo preporučujemo kupovinu domaće vode za pospješivanje BH ekonomije, te ukoliko se Vaša firma ili Vi lično bavite flaširanjem i prodajom naše domaće vode, iskoristite priliku
+            za besplatnom reklamom na našoj stranici. Kupujmo domaće!</p>
+        <br>
+        <form id="probnaForma">
+            <fieldset>
+                <label for="ID">ID: </label> <input id="ID" type="text" class="unosPodataka" name="ID"> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska"> <em class="errorTekst5" id="greskaText"></em>
+                <br><br>
+                <label for="naziv">Naziv (*): </label> <input id="naziv" type="text" class="unosPodataka" name="naziv"> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska2"> <em class="errorTekst5" id="greskaText2"></em>
+                <br><br>
+                <label for="slika">URL slike:</label> <input id="slika" type="text" class="unosPodataka" name="slika">
+                <br><br>
+                <label for="opis">Opis: </label> <input id="opis" type="text" class="unosPodataka" name="opis">
+                <br><br>
+                <label for="cijena">Cijena: </label> <input id="cijena" type="text" class="unosPodataka" name="cijena"> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska3"> <em class="errorTekst5" id="greskaText3"></em>
+                <br><br>
+                <input type="button" value="Dodaj" id="submitButton2" onclick="unesiProizvod()"> <input type="button" value="Uredi" class="submitButton34" onclick="urediProizvod()"> <input type="button" value="Obrisi" class="submitButton34" onclick="obrisiProizvod()">
+            </fieldset>
+        </form>
+        <br>
+        <table id="tabelaProizvoda">
+            <thead>
+            <tr>
+                <th class="proizvodiKolone">ID proizvoda</th>
+                <th class="proizvodiKolone">Naziv</th>
+                <th class="proizvodiKolone">Slika</th>
+                <th class="proizvodiKolone">Opis</th>
+                <th class="proizvodiKolone">Cijena</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="produkt">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="produkt">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="produkt">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="produkt">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
