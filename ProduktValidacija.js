@@ -72,6 +72,7 @@ function unesiProizvod() {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
                 alert("Uspjesno ste unijeli artikal!");
+                ucitajProizvode();
             }
         };
 
@@ -116,6 +117,7 @@ function obrisiProizvod() {
             if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
 
                 alert("Uspjesno obrisan proizvod!");
+                ucitajProizvode();
             }
             else
             {
@@ -258,5 +260,20 @@ function ucitajProizvode() {
 
 function popuniTabelu(lista){
 
-
+    var tabela = document.getElementById("tabelaProizvoda");
+    var noviRed = tabela.insertRow(1);
+    var idCell = noviRed.insertCell(0);
+    var nazivCell = noviRed.insertCell(1);
+    var slikaCell = noviRed.insertCell(2);
+    var opisCell = noviRed.insertCell(3);
+    var cijenaCell = noviRed.insertCell(4);
+    for (i = 0; i < lista.length; i++)
+    {
+        idCell.innerHTML = lista[i].id;
+        nazivCell.innerHTML = lista[i].naziv;
+        slikaCell.innerHTML = "<img src="+ lista[i].slika + " />";
+        opisCell.innerHTML = lista[i].opis;
+        cijenaCell.innerHTML = lista[i].cijena;
+    }
 }
+
