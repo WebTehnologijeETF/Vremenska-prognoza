@@ -5,12 +5,10 @@
     <title>Kontakt</title>
     <link rel="stylesheet" href="Glavni.css">
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
     <script src="KontaktValidacija.js"></script>
     <script src="AjaxOtvori.js"></script>
 </head>
-<body>
+<body onload="ucitajKontakt()">
 <header>
     <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
 </header>
@@ -40,13 +38,13 @@
         <fieldset>
             <h1 id="kontaktNaslov">Kontaktirajte nas</h1>
             <p>Ova stranica služi da kontaktirate kreatora web stranice, ukoliko imate bilo kakvih primjedbi i sugestija za naredni rad stranice.</p>
-            <label for="imePrezime">Ime i prezime (*): </label> <input id="imePrezime" type="text" class="unosPodataka" name="imePrezime"> <br><br>
-            <label for="mailAdresa">Mail adresa (*): </label> <input id="mailAdresa" type="text" class="unosPodataka" name="mailAdresa"> <br><br>
-            <label for="mjesto">Mjesto: </label> <input id="mjesto" type="text" class="unosPodataka" name="mjesto"> <br><br>
-            <label for="postanski">Poštanski broj: </label> <input id="postanski" type="text" class="unosPodataka" name="postanski">  <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska"> <em class="errorTekst4">Neispravan poštanski broj!</em>
+            <label for="imePrezime">Ime i prezime (*): </label> <input id="imePrezime" type="text" class="unosPodataka" name="imePrezime"> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska"> <em class="errorTekst5" id="greskaText">Neispravno ime i prezime</em> <br><br>
+            <label for="mailAdresa">Mail adresa (*): </label> <input id="mailAdresa" type="text" class="unosPodataka" name="mailAdresa"> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska2"> <em class="errorTekst5" id="greskaText2">Neispravna e-mail adresa</em> <br><br>
+            <label for="mjesto">Mjesto (*): </label> <input id="mjesto" type="text" class="unosPodataka" name="mjesto"> <br><br>
+            <label for="postanski">Poštanski broj (*): </label> <input id="postanski" type="text" class="unosPodataka" name="postanski">  <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska3"> <em class="errorTekst5" id="greskaText3">Neispravan poštanski broj!</em>
             <br><br>
-            <label for="subjekt">Subjekt: </label> <input id="subjekt" type="text" list="listaSubjekata" class="unosPodataka" name="subjekt"> <br><br>
-            <label>Komentar: </label> <textarea id="komentar"></textarea> <br><br>
+            <label for="subjekt">Subjekt: </label> <input id="subjekt" type="text" list="listaSubjekata" class="unosPodataka" name="subjekt"> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska4"> <em class="errorTekst5" id="greskaText4">Morate izrabrati subjekt</em> <br><br>
+            <label>Komentar: </label> <textarea id="komentar"></textarea> <img src="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" alt="http://png-2.findicons.com/files/icons/1609/ose_png/256/warning.png" class="greska" id="rucnaGreska5"> <em class="errorTekst5" id="greskaText5">Morate unijeti komentar</em> <br><br>
             <input type="submit" value="Posalji" id="submitButton">
         </fieldset>
     </form>

@@ -2,73 +2,54 @@
  * Created by Haris on 9.4.2015.
  */
 
-$(document).ready(function(){
-    $("#rucnaGreska").hide();
-    $(".errorTekst4").hide();
-   $(":submit").click(function () {
-       var ime = $("#imePrezime");
-       validirajMjesto();
-       var prolazi = false;
-       $.validator.addMethod('onlyLetters', function (value, element, param) {
-           var re = new RegExp("^[a-zA-Z]+$");
-           if (re.test(value))
-               prolazi = true;
-           else prolazi = false;
-           return prolazi;
-       }, 'Smijete koristii samo slova');
-
-       $.validator.addMethod('filledSubject', function (value, element, param) {
-           var x = $("#subjekt").val();
-           var y = $("#komentar").val();
-           if ((x == "" || x == null) && (y != "" && y!= null))
-               prolazi = false;
-           else prolazi = true;
-           return prolazi;
-       }, 'Subjekt ne smije biti prazan, ako postoji komentar');
-
-       $("form").validate({
-           rules: {
-               imePrezime: {
-                   required: true,
-                   minlength: 3,
-                   maxlength: 25,
-                   onlyLetters: true
-               },
-               mailAdresa:{
-                   required: true,
-                   email: true
-               },
-               subjekt:{
-                    filledSubject:true
-               }
-           },
-           errorElement: "img",
-           errorPlacement: function(error, element) {
-                   error.insertAfter(element);
-               if (element.attr("id") == "imePrezime")
-                   $("<em class='errorTekst1'>Unesite pravilno ime!</em>").insertAfter(error);
-               else if (element.attr("id") == "mailAdresa")
-                   $("<em class='errorTekst2'>Unesite validnu mail adresu!</em>").insertAfter(error);
-               else if (element.attr("id") == "subjekt")
-                   $("<em class='errorTekst3'>Izaberite subjekt komentara!</em>").insertAfter(error);
-           },
-           messages: {
-               imePrezime: "Molimo unesite pravilno Vaše ime",
-               mailAdresa: "Molimo unesite ispravnu mail adresu"
-           },
-           unhighlight: function (element) {
-               $(element)
-                   .closest('.form-group').removeClass('has-error');
-           },
-           submitHandler: function(form) {
-               var doku = $("#rucnaGreska").is(":visible");
-               if (doku == false)
-                form.submit();
-           }
-       }
-       );
-   });
-});
+function ucitajKontakt(){
+    document.getElementById("rucnaGreska").style.display = "none";
+    document.getElementById("greskaText").style.display = "none";
+    document.getElementById("rucnaGreska2").style.display = "none";
+    document.getElementById("greskaText2").style.display = "none";
+    document.getElementById("rucnaGreska3").style.display = "none";
+    document.getElementById("greskaText3").style.display = "none";
+    document.getElementById("rucnaGreska4").style.display = "none";
+    document.getElementById("greskaText4").style.display = "none";
+    document.getElementById("rucnaGreska5").style.display = "none";
+    document.getElementById("greskaText5").style.display = "none";
+    var submitDugme = document.getElementById("submitButton");
+    submitDugme.onclick = function () {
+        var ime = document.getElementById("imePrezime").value;
+        var mail = document.getElementById("mailAdresa").value;
+        validirajMjesto();
+        var subbool = validirajSubjektKomentar();
+        var sveProlazi = true;
+        if (document.getElementById("rucnaGreska3").style.display == "block")
+            sveProlazi = false;
+        if (validirajIme(ime) == false)
+        {
+            sveProlazi = false;
+            document.getElementById("rucnaGreska").style.display = "block";
+            document.getElementById("greskaText").style.display = "block";
+        }
+        else
+        {
+            document.getElementById("rucnaGreska").style.display = "none";
+            document.getElementById("greskaText").style.display = "none";
+        }
+        if (validirajMail(mail) == false)
+        {
+            sveProlazi = false;
+            document.getElementById("rucnaGreska2").style.display = "block";
+            document.getElementById("greskaText2").style.display = "block";
+        }
+        else
+        {
+            document.getElementById("rucnaGreska2").style.display = "none";
+            document.getElementById("greskaText2").style.display = "none";
+        }
+        if (subbool == false)
+            sveProlazi = false;
+        if (sveProlazi == false)
+            event.preventDefault();
+   }
+}
 
 function validirajMjesto() {
     var mjesto = document.getElementById("mjesto");
@@ -92,17 +73,67 @@ function validirajMjesto() {
                 tacnaPosta = true;
             if (tacnaPosta == false)
             {
-                $("#rucnaGreska").show();
-                $(".errorTekst4").show();
+                document.getElementById("rucnaGreska3").style.display = "block";
+                document.getElementById("greskaText3").style.display = "block";
             }
             else
             {
-                $("#rucnaGreska").hide();
-                $(".errorTekst4").hide();
+                document.getElementById("rucnaGreska3").style.display = "none";
+                document.getElementById("greskaText3").style.display = "none";
             }
         }
     };
 
     xmlhttp.open("GET", "http://zamger.etf.unsa.ba/wt/postanskiBroj.php?mjesto=" + mjesto.value + "&postanskiBroj=" + postanski.value, true);
     xmlhttp.send();
+}
+
+function validirajMail(email)
+{
+    var ispravno = true;
+    var mailTest = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$");
+    if (!mailTest.test(email))
+    ispravno = false;
+    return ispravno;
+}
+
+function validirajIme(imePrezime)
+{
+    var ispravno = true;
+    if (imePrezime.length < 3 || imePrezime > 30)
+        ispravno = false;
+    var imeTest = new RegExp("^[a-zA-Z]+$");
+    if (!imeTest.test(imePrezime))
+        ispravno = false;
+    return ispravno;
+}
+
+function validirajSubjektKomentar()
+{
+    var subjekt = document.getElementById("subjekt").value;
+    var komentar = document.getElementById("komentar").value;
+    var tacno = true;
+    if ((subjekt == null || subjekt == "") && (komentar != null && komentar != ""))
+    {
+        tacno = false;
+        document.getElementById("rucnaGreska4").style.display = "block";
+        document.getElementById("greskaText4").style.display = "block";
+    }
+    else
+    {
+        document.getElementById("rucnaGreska4").style.display = "none";
+        document.getElementById("greskaText4").style.display = "none";
+    }
+    if ((subjekt != null && subjekt != "") && (komentar == null || komentar == ""))
+    {
+        tacno = false;
+        document.getElementById("rucnaGreska5").style.display = "block";
+        document.getElementById("greskaText5").style.display = "block";
+    }
+    else
+    {
+        document.getElementById("rucnaGreska5").style.display = "none";
+        document.getElementById("greskaText5").style.display = "none";
+    }
+    return tacno;
 }

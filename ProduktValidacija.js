@@ -2,25 +2,24 @@
  * Created by Haris on 3.5.2015.
  */
 
-
-$(document).ready(function(){
-    $("#rucnaGreska").hide();
-    $("#greskaText").hide();
-    $("#rucnaGreska2").hide();
-    $("#greskaText2").hide();
-    $("#rucnaGreska3").hide();
-    $("#greskaText3").hide();
+function sakrij()
+{
+    document.getElementById("rucnaGreska").style.display = "none";
+    document.getElementById("greskaText").style.display = "none";
+    document.getElementById("rucnaGreska2").style.display = "none";
+    document.getElementById("greskaText2").style.display = "none";
+    document.getElementById("rucnaGreska3").style.display = "none";
+    document.getElementById("greskaText3").style.display = "none";
     ucitajProizvode();
-});
-
+}
 
 function unesiProizvod() {
-    $("#rucnaGreska").hide();
-    $("#greskaText").hide();
-    $("#rucnaGreska2").hide();
-    $("#greskaText2").hide();
-    $("#rucnaGreska3").hide();
-    $("#greskaText3").hide();
+    document.getElementById("rucnaGreska").style.display = "none";
+    document.getElementById("greskaText").style.display = "none";
+    document.getElementById("rucnaGreska2").style.display = "none";
+    document.getElementById("greskaText2").style.display = "none";
+    document.getElementById("rucnaGreska3").style.display = "none";
+    document.getElementById("greskaText3").style.display = "none";
     var url = "http://zamger.etf.unsa.ba/wt/proizvodi.php?brindexa=16358";
     var sveValidno = true;
     var naziv = document.getElementById("naziv").value;
@@ -30,27 +29,27 @@ function unesiProizvod() {
 
     if (naziv.length < 3 || naziv.length > 25)
     {
-        $("#rucnaGreska2").show();
-        $("#greskaText2").show();
+        document.getElementById("rucnaGreska2").style.display = "block";
+        document.getElementById("greskaText2").style.display = "block";
         document.getElementById("greskaText2").textContent = 'Morate unijeti pravilno ime';
         sveValidno = false;
     }
     else
     {
-        $("#rucnaGreska2").hide();
-        $("#greskaText2").hide();
+        document.getElementById("rucnaGreska2").style.display = "none";
+        document.getElementById("greskaText2").style.display = "none";
     }
     if (validirajCIjenu(cijena) == false)
     {
-        $("#rucnaGreska3").show();
-        $("#greskaText3").show();
+        document.getElementById("rucnaGreska3").style.display = "block";
+        document.getElementById("greskaText3").style.display = "block";
         document.getElementById("greskaText3").textContent = 'Morate unijeti ispravan broj';
         sveValidno = false;
     }
     else
     {
-        $("#rucnaGreska3").hide();
-        $("#greskaText3").hide();
+        document.getElementById("rucnaGreska3").style.display = "none";
+        document.getElementById("greskaText3").style.display = "none";
     }
     if (sveValidno) {
 
@@ -83,23 +82,23 @@ function unesiProizvod() {
 }
 
 function obrisiProizvod() {
-    $("#rucnaGreska").hide();
-    $("#greskaText").hide();
-    $("#rucnaGreska2").hide();
-    $("#greskaText2").hide();
-    $("#rucnaGreska3").hide();
-    $("#greskaText3").hide();
+    document.getElementById("rucnaGreska").style.display = "none";
+    document.getElementById("greskaText").style.display = "none";
+    document.getElementById("rucnaGreska2").style.display = "none";
+    document.getElementById("greskaText2").style.display = "none";
+    document.getElementById("rucnaGreska3").style.display = "none";
+    document.getElementById("greskaText3").style.display = "none";
     var ID_vrijednost = document.getElementById("ID").value;
     if (validirajID(ID_vrijednost) == false)
     {
-        $("#rucnaGreska").show();
-        $("#greskaText").show();
+        document.getElementById("rucnaGreska").style.display = "block";
+        document.getElementById("greskaText").style.display = "block";
         document.getElementById("greskaText").textContent = 'Morate unijeti validan ID';
     }
     else
     {
-        $("#rucnaGreska").hide();
-        $("#greskaText").hide();
+        document.getElementById("rucnaGreska").style.display = "none";
+        document.getElementById("greskaText").style.display = "none";
         var proizvod = {
             id: ID_vrijednost
         };
@@ -121,8 +120,8 @@ function obrisiProizvod() {
             }
             else
             {
-                $("#rucnaGreska").show();
-                $("#greskaText").show();
+                document.getElementById("rucnaGreska").style.display = "block";
+                document.getElementById("greskaText").style.display = "block";
                 document.getElementById("greskaText").textContent = 'ID ne postoji u bazi!';
             }
 
@@ -164,38 +163,38 @@ function urediProizvod(){
     var slika = document.getElementById("slika").value;
     var sveValidno = true;
     if (validirajID(ID_vrijednost) == false) {
-        $("#rucnaGreska").show();
-        $("#greskaText").show();
+        document.getElementById("rucnaGreska").style.display = "block";
+        document.getElementById("greskaText").style.display = "block";
         document.getElementById("greskaText").textContent = 'Morate unijeti validan ID';
         sveValidno = false;
     }
     else {
-        $("#rucnaGreska").hide();
-        $("#greskaText").hide();
+        document.getElementById("rucnaGreska").style.display = "none";
+        document.getElementById("greskaText").style.display = "none";
     }
     if (naziv.length < 3 || naziv.length > 25)
     {
-        $("#rucnaGreska2").show();
-        $("#greskaText2").show();
+        document.getElementById("rucnaGreska2").style.display = "block";
+        document.getElementById("greskaText2").style.display = "block";
         document.getElementById("greskaText2").textContent = 'Morate unijeti pravilno ime';
         sveValidno = false;
     }
     else
     {
-        $("#rucnaGreska2").hide();
-        $("#greskaText2").hide();
+        document.getElementById("rucnaGreska2").style.display = "none";
+        document.getElementById("greskaText2").style.display = "none";
     }
     if (validirajCIjenu(cijena) == false)
     {
-        $("#rucnaGreska3").show();
-        $("#greskaText3").show();
+        document.getElementById("rucnaGreska3").style.display = "block";
+        document.getElementById("greskaText3").style.display = "block";
         document.getElementById("greskaText3").textContent = 'Morate unijeti ispravan broj';
         sveValidno = false;
     }
     else
     {
-        $("#rucnaGreska3").hide();
-        $("#greskaText3").hide();
+        document.getElementById("rucnaGreska3").style.display = "none";
+        document.getElementById("greskaText3").style.display = "none";
     }
     if (sveValidno == true) {
         var proizvod = {
@@ -222,8 +221,8 @@ function urediProizvod(){
             }
             else
             {
-                $("#rucnaGreska").show();
-                $("#greskaText").show();
+                document.getElementById("rucnaGreska").style.display = "block";
+                document.getElementById("greskaText").style.display = "block";
                 document.getElementById("greskaText").textContent = 'ID ne postoji u bazi!';
             }
 
