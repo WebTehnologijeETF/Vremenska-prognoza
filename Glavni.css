@@ -159,7 +159,7 @@ p{
 
 #oNama{
     margin-left: auto;
-    margin-right: 12%;
+    margin-right: 7%;
     width: 70%;
     background-color: cornflowerblue;
     height: 74%;
@@ -205,7 +205,7 @@ textarea{
 }
 
 #submitButton{
-    margin-left: 45%;
+    margin-left: 40%;
     width: 10%;
     height: 30px;
     font-family: 'Rokkitt', serif;
@@ -213,9 +213,28 @@ textarea{
     color: darkblue;
 }
 
-#submitButton:hover{
+#resetButton{
+    margin-left: 2%;
+    width: 10%;
+    height: 30px;
+    font-family: 'Rokkitt', serif;
+    font-size: large;
+    color: darkblue;
+}
+
+#submitButton3{
+    margin-left: 40%;
+    width: 12%;
+    height: 30px;
+    font-family: 'Rokkitt', serif;
+    font-size: large;
+    color: darkblue;
+}
+
+#submitButton:hover, #resetButton:hover, #submitButton3:hover{
     background-color: yellow;
 }
+
 
 #dnevniSati{
     width: 15%;
@@ -511,4 +530,32 @@ th, td {
 
 #greskaText5{
     margin-top: -5%;
+}
+
+#rucnaGreska, #rucnaGreska2, #rucnaGreska3, #rucnaGreska4, #rucnaGreska5{
+    display: none;
+}
+
+.provjera{
+    margin-left: 1%;
+}
+
+#kontaktPrikaz{
+    margin-left: auto;
+    margin-right: 12%;
+    width: 92.5%;
+    background-color: cornflowerblue;
+    border: medium solid white
+}
+
+.lijeva{
+    text-align: right;
+    margin-left: 10%;
+}
+
+.pregled{
+    font-weight: bold;
+    font-family: 'Rokkitt', serif;
+    color: darkblue;
+    border: none;
 }

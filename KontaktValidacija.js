@@ -3,16 +3,11 @@
  */
 
 function ucitajKontakt(){
-    document.getElementById("rucnaGreska").style.display = "none";
-    document.getElementById("greskaText").style.display = "none";
-    document.getElementById("rucnaGreska2").style.display = "none";
-    document.getElementById("greskaText2").style.display = "none";
-    document.getElementById("rucnaGreska3").style.display = "none";
-    document.getElementById("greskaText3").style.display = "none";
-    document.getElementById("rucnaGreska4").style.display = "none";
-    document.getElementById("greskaText4").style.display = "none";
-    document.getElementById("rucnaGreska5").style.display = "none";
-    document.getElementById("greskaText5").style.display = "none";
+    document.getElementById("greskaText").textContent = "";
+    document.getElementById("greskaText2").textContent = "";
+    document.getElementById("greskaText3").textContent = "";
+    document.getElementById("greskaText4").textContent = "";
+    document.getElementById("greskaText5").textContent = "";
     var submitDugme = document.getElementById("submitButton");
     submitDugme.onclick = function () {
         var ime = document.getElementById("imePrezime").value;
@@ -26,23 +21,23 @@ function ucitajKontakt(){
         {
             sveProlazi = false;
             document.getElementById("rucnaGreska").style.display = "block";
-            document.getElementById("greskaText").style.display = "block";
+            document.getElementById("greskaText").textContent = "Neispravno ime i prezime";
         }
         else
         {
             document.getElementById("rucnaGreska").style.display = "none";
-            document.getElementById("greskaText").style.display = "none";
+            document.getElementById("greskaText").textContent = "";
         }
         if (validirajMail(mail) == false)
         {
             sveProlazi = false;
             document.getElementById("rucnaGreska2").style.display = "block";
-            document.getElementById("greskaText2").style.display = "block";
+            document.getElementById("greskaText2").textContent = "Neispravna e-mail adresa";
         }
         else
         {
             document.getElementById("rucnaGreska2").style.display = "none";
-            document.getElementById("greskaText2").style.display = "none";
+            document.getElementById("greskaText2").textContent = "";
         }
         if (subbool == false)
             sveProlazi = false;
@@ -74,12 +69,12 @@ function validirajMjesto() {
             if (tacnaPosta == false)
             {
                 document.getElementById("rucnaGreska3").style.display = "block";
-                document.getElementById("greskaText3").style.display = "block";
+                document.getElementById("greskaText3").textContent = "Neispravan poštanski broj";
             }
             else
             {
                 document.getElementById("rucnaGreska3").style.display = "none";
-                document.getElementById("greskaText3").style.display = "none";
+                document.getElementById("greskaText3").textContent = "";
             }
         }
     };
@@ -102,7 +97,7 @@ function validirajIme(imePrezime)
     var ispravno = true;
     if (imePrezime.length < 3 || imePrezime > 30)
         ispravno = false;
-    var imeTest = new RegExp("^[a-zA-Z]+$");
+    var imeTest = new RegExp("^[a-zA-Z\\s]*$");
     if (!imeTest.test(imePrezime))
         ispravno = false;
     return ispravno;
@@ -117,23 +112,33 @@ function validirajSubjektKomentar()
     {
         tacno = false;
         document.getElementById("rucnaGreska4").style.display = "block";
-        document.getElementById("greskaText4").style.display = "block";
+        document.getElementById("greskaText4").textContent = "Morate izrabrati subjekt";
     }
     else
     {
         document.getElementById("rucnaGreska4").style.display = "none";
-        document.getElementById("greskaText4").style.display = "none";
+        document.getElementById("greskaText4").textContent = "";
     }
     if ((subjekt != null && subjekt != "") && (komentar == null || komentar == ""))
     {
         tacno = false;
         document.getElementById("rucnaGreska5").style.display = "block";
-        document.getElementById("greskaText5").style.display = "block";
+        document.getElementById("greskaText5").textContent = "Morate unijeti komentar";
     }
     else
     {
         document.getElementById("rucnaGreska5").style.display = "none";
-        document.getElementById("greskaText5").style.display = "none";
+        document.getElementById("greskaText5").textContent = "";
     }
     return tacno;
+}
+
+function resetForm()
+{
+    document.getElementById("imePrezime").value = "";
+    document.getElementById("mailAdresa").value = "";
+    document.getElementById("mjesto").value = "";
+    document.getElementById("postanski").value = "";
+    document.getElementById("subjekt").value = "";
+    document.getElementById("komentar").value = "";
 }
