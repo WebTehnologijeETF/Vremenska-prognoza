@@ -11,14 +11,14 @@ $from = $_POST['mailVrijednost'];
 $subject = $_POST['subjektVrijednost'];
 $send_to = "custovicharis@gmail.com";
 $email->addTo($send_to)
-    ->addCc("irfanpra@gmail.com")
+    //->addCc("irfanpra@gmail.com")
     ->setFrom($from)
     ->setSubject($subject)
     ->setHtml($message);
 try {
     $sendgrid->send($email);
     echo "<script>alert('Uspješno ste poslali mail!')</script>";
-    echo file_get_contents("Index.html");
+    echo file_get_contents("Index.php");
 } catch(\SendGrid\Exception $e) {
     echo $e->getCode();
     foreach($e->getErrors() as $er) {
