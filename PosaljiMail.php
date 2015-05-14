@@ -11,7 +11,7 @@ $from = $_POST['mailVrijednost'];
 $subject = $_POST['subjektVrijednost'];
 $send_to = "custovicharis@gmail.com";
 $email->addTo($send_to)
-    //->addCc("irfanpra@gmail.com")
+    ->addCc("irfanpra@gmail.com")
     ->setFrom($from)
     ->setSubject($subject)
     ->setHtml($message);

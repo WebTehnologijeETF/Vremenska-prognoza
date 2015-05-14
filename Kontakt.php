@@ -5,13 +5,6 @@ $ime = $mail = $mjesto = $postanski = $subjekt = $komentar = "";
 $imeGreska = $mailGreska = $postanskiGreska = $subjektGreska = $komentarGreska = "";
 $imeSlika = $mailSlika = $postanskiSlika = $subjektSlika = $komentarSlika = "display:none";
 
-$prima = <<<_HTML_
-
-
-
-_HTML_;
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $sveValidno = true;
