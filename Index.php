@@ -1,71 +1,57 @@
-
 <?php
 
-$counter=0;
 $novosti = array();
 $primjer = "";
-foreach(glob("novosti/*.txt") as $imeFajla)
-{
-    $novosti[$counter] = file($imeFajla);
-    $counter++;
+$brojac = 0;
+
+$konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
+if ($konekcija->connect_error) {
+    die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
 }
 
-$kolicinaNovosti=count($novosti);
-for ($i=0; $i<$kolicinaNovosti; $i++)
-{
-    for ($j=0; $j<$kolicinaNovosti-1-$i; $j++) {
-        $time1 = strtotime($novosti[$j][0]); $newformat1 = date('d-m-Y h:i:s',$time1);
-        $time2 = strtotime($novosti[$j+1][0]); $newformat2 = date('d-m-Y h:i:s',$time2);
-        if ($time2 < $time1) {
-            $tmp=$novosti[$j];
-            $novosti[$j]=$novosti[$j+1];
-            $novosti[$j+1]=$tmp;
-        }
+$sql = "SELECT a.Ime, a.Prezime, n.* FROM Autor a, Novost n WHERE a.Id = n.AutorID";
+$rezultat = $konekcija->query($sql);
+$konekcija->close();
+
+if ($rezultat->num_rows > 0) {
+    while($red = $rezultat->fetch_assoc()) {
+        $novosti[$brojac++] = $red;
     }
 }
 
-for ($i=0; $i<$kolicinaNovosti; $i++)
+usort($novosti, function($a, $b) {
+    return $a['DatumObjave'] - $b['DatumObjave'];
+});
+
+
+for ($i = 0; $i < $brojac; $i++)
 {
-    $novostLength=count($novosti[$i]);
-    $sadrzajNovosti=$detaljnijeNovosti="";
-    $j=4;
-    while ($j<$novostLength){
-        if (trim($novosti[$i][$j])=="--"){
-            for ($k=$j+1; $k<$novostLength; $k++){
-                $detaljnijeNovosti.=$novosti[$i][$k];
-            }
-            break;
-        }
-        $sadrzajNovosti.=$novosti[$i][$j];
-        $j++;
-    }
-    $datum=$novosti[$i][0]; $autor=$novosti[$i][1]; $naslov=$novosti[$i][2]; $slika=$novosti[$i][3];
-    if (empty($detaljnijeNovosti))
-    {
+    $autor = $novosti[$i]["Ime"] . " " . $novosti[$i]["Prezime"];
+    $naslov = $novosti[$i]["Naslov"];
+    $slika = $novosti[$i]["Slika"];
+    $sadrzajNovosti = $novosti[$i]["Opis"];
+    $datum = $novosti[$i]["DatumObjave"];
+    $detaljnijeNovosti = $novosti[$i]["Detaljno"];
+    if (empty($detaljnijeNovosti) || $detaljnijeNovosti == null)
         $vidljivost = 'display: none';
-    }
-    else
-    {
-        $vidljivost = 'display: block';
-    }
-   $primjer .= "
-        <form method='get' action='PrikazVijest.php'>
-            <div class='listItem'>
-                <input type='hidden' name='autor' value='$autor'>
-                <input type='hidden' name='naslov' value='$naslov'>
-                <input type='hidden' name='slika' value='$slika'>
-                <input type='hidden' name='sadržaj' value= '$sadrzajNovosti'>
-                <input type='hidden' name='datum' value='$datum'>
-                <input type='hidden' name='detaljno' value='$detaljnijeNovosti'>
-                <img src=$slika alt=$slika>
-                <h3 class='naslov'>$naslov</h3>
-                <p>$sadrzajNovosti</p>
-                <br>
-                <p class='nastaviLink'><span> $autor,  $datum  </span> <input style='$vidljivost' type='submit' id='submitButton4' value='Detaljnije>>'>
-            </div>
+    else $vidljivost = 'display: block';
+    $primjer .= "
+    <form method='get' action='PrikazVijest.php'>
+           <div class='listItem'>
+           <input type='hidden' name='autor' value='$autor'>
+          <input type='hidden' name='naslov' value='$naslov'>
+          <input type='hidden' name='slika' value='$slika'>
+          <input type='hidden' name='sadržaj' value= '$sadrzajNovosti'>
+          <input type='hidden' name='datum' value='$datum'>
+          <input type='hidden' name='detaljno' value='$detaljnijeNovosti'>
+          <img src=$slika alt=$slika>
+          <h3 class='naslov'>$naslov</h3>
+          <p>$sadrzajNovosti</p>
+          <br>
+          <p class='nastaviLink'><span> $autor,  $datum  </span> <input style='$vidljivost' type='submit' id='submitButton4' value='Detaljnije>>'>
+          </div>
         </form>";
 }
-
 echo <<<_HTML_
 
 <!DOCTYPE html>
