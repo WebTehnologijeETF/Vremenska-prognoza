@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c652a71-997e-4d5b-bc2e-c5faf21db874" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Administrator.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AdministratorPanel.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Komentari.php" />
@@ -17,6 +18,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Index.php" afterPath="$PROJECT_DIR$/Index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kontakt.php" afterPath="$PROJECT_DIR$/Kontakt.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Meteorologija.html" afterPath="$PROJECT_DIR$/Meteorologija.html" />
+=======
+>>>>>>> origin/master
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrikazVijest.php" afterPath="$PROJECT_DIR$/PrikazVijest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projekti.html" afterPath="$PROJECT_DIR$/Projekti.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -43,7 +46,41 @@
     <favorites_list name="Vremenska Prognoza" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf />
+=======
+    <leaf>
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1870">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+              <folding>
+                <marker date="1432801822471" expanded="true" signature="275:349" placeholder="SELECT a.Ime..Autor..." />
+                <marker date="1432801822471" expanded="true" signature="1176:1989" placeholder="..." />
+                <marker date="1432801822471" expanded="true" signature="1210:1973" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrikazVijest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PrikazVijest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.6390843" vertical-offset="0" max-vertical-offset="2873">
+              <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+              <folding>
+                <marker date="1432809886335" expanded="true" signature="2130:2208" placeholder="INSERT INTO ..." />
+                <marker date="1432809886335" expanded="true" signature="3551:3591" placeholder="SELECT * FRO..komentar..." />
+                <marker date="1432809886335" expanded="true" signature="5409:5449" placeholder="SELECT * FRO..komentar..." />
+                <marker date="1432809886335" expanded="true" signature="6262:6931" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> origin/master
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -256,8 +293,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
+=======
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+>>>>>>> origin/master
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -297,7 +339,11 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18814056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18869309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> origin/master
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -599,16 +645,24 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Projekti.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.112676054" vertical-offset="455" max-vertical-offset="1343">
           <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/Glavni.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6919275" vertical-offset="10800" max-vertical-offset="11407">
+          <caret line="660" column="15" selection-start-line="660" selection-start-column="15" selection-end-line="660" selection-end-column="15" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kontakt.php">
+    <entry file="file://$PROJECT_DIR$/PosaljiMail.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.62852114" vertical-offset="2244" max-vertical-offset="3247">
           <caret line="153" column="74" selection-start-line="153" selection-start-column="74" selection-end-line="153" selection-end-column="74" />
           <folding />
@@ -624,17 +678,27 @@
             <marker date="1432840558376" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1432840558376" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+=======
+        <state vertical-scroll-proportion="0.38908452" vertical-offset="0" max-vertical-offset="568">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Glavni.css">
+    <entry file="file://$PROJECT_DIR$/Kontakt.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.523888" vertical-offset="11667" max-vertical-offset="12274">
           <caret line="705" column="23" selection-start-line="705" selection-start-column="23" selection-end-line="705" selection-end-column="23" />
+=======
+        <state vertical-scroll-proportion="0.52112675" vertical-offset="1183" max-vertical-offset="3230">
+          <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Komentari.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28399312" vertical-offset="583" max-vertical-offset="1734">
@@ -651,15 +715,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72289157" vertical-offset="56" max-vertical-offset="663">
           <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+=======
+    <entry file="file://$PROJECT_DIR$/KontaktProvjera.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38908452" vertical-offset="0" max-vertical-offset="568">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Odjava.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.20481928" vertical-offset="0" max-vertical-offset="581">
           <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding />
+=======
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1870">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <marker date="1432801822471" expanded="true" signature="275:349" placeholder="SELECT a.Ime..Autor..." />
+            <marker date="1432801822471" expanded="true" signature="1176:1989" placeholder="..." />
+            <marker date="1432801822471" expanded="true" signature="1210:1973" placeholder="..." />
+          </folding>
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -706,6 +786,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Korisnici.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.5809859" vertical-offset="2271" max-vertical-offset="2992">
           <caret line="153" column="98" selection-start-line="153" selection-start-column="82" selection-end-line="153" selection-end-column="98" />
           <folding>
@@ -714,6 +795,15 @@
             <marker date="1432845520183" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..administrator..." />
             <marker date="1432845520183" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
             <marker date="1432845520183" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..administrator..." />
+=======
+        <state vertical-scroll-proportion="4.6390843" vertical-offset="0" max-vertical-offset="2873">
+          <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+          <folding>
+            <marker date="1432809886335" expanded="true" signature="2130:2208" placeholder="INSERT INTO ..." />
+            <marker date="1432809886335" expanded="true" signature="3551:3591" placeholder="SELECT * FRO..komentar..." />
+            <marker date="1432809886335" expanded="true" signature="5409:5449" placeholder="SELECT * FRO..komentar..." />
+            <marker date="1432809886335" expanded="true" signature="6262:6931" placeholder="..." />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
