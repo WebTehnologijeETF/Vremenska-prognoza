@@ -28,7 +28,7 @@ if (isset($_POST['noviUsername']) && isset($_POST['noviPass']) && isset($_POST['
     testirajPodatak($dodaniPass);
     $dodaniMail = $_POST['noviMail'];
     testirajPodatak($dodaniMail);
-    $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+    $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
     $konekcija->set_charset("utf8");
     if ($konekcija->connect_error) {
         die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -65,7 +65,7 @@ if (isset($_POST['noviUsername']) && isset($_POST['noviPass']) && isset($_POST['
 }
     $user = $pass = $email = "";
     $Id = $_POST["korisnikUsername"];
-    $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+    $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
     $konekcija->set_charset("utf8");
     if ($konekcija->connect_error) {
         die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);

@@ -52,7 +52,7 @@
         $naziv = $_GET['naslov'];
         if(isset($_GET['komentar']) && ($_GET['komentar'] != null))
         {
-            $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+            $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
             $konekcija->set_charset("utf8");
             if ($konekcija->connect_error) {
                 die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -83,7 +83,7 @@
 
     <p id="komentarBroj" onclick="prikaziSveKomentare()">Broj komentara: <?php
         $Id = $_GET['ID'];
-        $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+        $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
         $konekcija->set_charset("utf8");
         if ($konekcija->connect_error) {
             die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -120,7 +120,7 @@
             $komentari = array();
             $brojac = 0;
             $Id = $_GET['ID'];
-            $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+            $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
             $konekcija->set_charset("utf8");
             if ($konekcija->connect_error) {
                 die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);

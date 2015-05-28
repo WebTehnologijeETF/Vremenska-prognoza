@@ -27,7 +27,7 @@ if (isset($_POST['noviNaslov']) && isset($_POST['url']) && isset($_POST['uvod'])
     testirajPodatak($imeAutora);
     $prezimeAutora = $_POST['prezimeAutora'];
     testirajPodatak($prezimeAutora);
-    $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+    $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
     $konekcija->set_charset("utf8");
     if ($konekcija->connect_error) {
         die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -78,7 +78,7 @@ if (isset($_POST['noviNaslov']) && isset($_POST['url']) && isset($_POST['uvod'])
 
 $naslov = ""; $slika = ""; $opis = ""; $detaljno = ""; $AID = ""; $ime = ""; $prezime = "";
     $Id = $_POST["naslov"];
-    $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+    $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
     $konekcija->set_charset("utf8");
     if ($konekcija->connect_error) {
         die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -103,7 +103,7 @@ $naslov = ""; $slika = ""; $opis = ""; $detaljno = ""; $AID = ""; $ime = ""; $pr
         $opis = $objekt["Opis"];
         $detaljno = $objekt["Detaljno"];
         $AID = $objekt["AutorID"];
-        $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+        $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
         $konekcija->set_charset("utf8");
         if ($konekcija->connect_error) {
             die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);

@@ -27,7 +27,7 @@ if (isset($_GET['naslov']) && isset($_GET['url'])  && isset($_GET['uvod']) && is
         testirajPodatak($imeAutora);
         $prezimeAutora = $_GET['prezimeAutora'];
         testirajPodatak($prezimeAutora);
-        $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+        $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
         $konekcija->set_charset("utf8");
         if ($konekcija->connect_error) {
             die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -94,7 +94,7 @@ if (isset($_GET['naslov']) && isset($_GET['url'])  && isset($_GET['uvod']) && is
 
 if (isset($_POST['naslov']))
 {
-    $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+    $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
     $konekcija->set_charset("utf8");
     if ($konekcija->connect_error) {
         die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -143,7 +143,7 @@ if (isset($_POST['naslov']))
     </form>
     <datalist id="SveNovosti">
         <?php
-        $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
+        $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
         $konekcija->set_charset("utf8");
         if ($konekcija->connect_error) {
             die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
