@@ -32,7 +32,7 @@ if (isset($_GET['username']) && isset($_GET['pss'])  && isset($_GET['mailAdresa'
         testirajPodatak($password);
         $dodaniMail = $_GET['mailAdresa'];
         testirajPodatak($email);
-        $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
+        $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
         $konekcija->set_charset("utf8");
         if ($konekcija->connect_error) {
             die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -78,7 +78,7 @@ if (isset($_GET['username']) && isset($_GET['pss'])  && isset($_GET['mailAdresa'
 
 if (isset($_POST['username']))
 {
-    $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
+    $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
     $konekcija->set_charset("utf8");
     if ($konekcija->connect_error) {
         die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
@@ -130,7 +130,7 @@ if (isset($_POST['username']))
     </form>
     <datalist id="SviKorisnici">
         <?php
-        $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
+        $konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
         $konekcija->set_charset("utf8");
         if ($konekcija->connect_error) {
             die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);

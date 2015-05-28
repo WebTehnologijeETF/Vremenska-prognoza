@@ -4,7 +4,7 @@ $novosti = array();
 $primjer = "";
 $brojac = 0;
 
-$konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
+$konekcija = new mysqli("127.11.177.130", "adminrHa828q", "U8DdJ3e5RUxl", "wt");
 $konekcija->set_charset("utf8");
 if ($konekcija->connect_error) {
     die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
