@@ -42,6 +42,12 @@
 
 <div id="sredina">
         <?php
+        function testirajPodatak(&$podatak)
+        {
+            $podatak = trim($podatak);
+            $podatak = stripcslashes($podatak);
+            $podatak = htmlspecialchars($podatak);
+        }
         $naziv = $_GET['naslov'];
         if(isset($_GET['komentar']) && ($_GET['komentar'] != null))
         {
@@ -53,8 +59,11 @@
             $sql = $konekcija->prepare("INSERT INTO komentar (Komentator, Email, Poruka, NovostID) VALUES (?, ?, ?, ?)");
             $sql->bind_param("sssi", $Komentator, $Email, $Poruka, $NovostID);
             $Komentator = $_GET['autorKomentara'];
+            testirajPodatak($Komentator);
             $Email = $_GET['email'];
+            testirajPodatak($Email);
             $Poruka = $_GET['komentar'];
+            testirajPodatak($Poruka);
             $NovostID = $_GET['ID'];
             $sql->execute();
             $sql->close();
