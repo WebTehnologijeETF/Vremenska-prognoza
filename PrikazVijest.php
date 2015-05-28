@@ -36,12 +36,19 @@
             <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a></li>
             <li><a onclick="AjaxOtvori('Kontakt.php')">Kontakt</a></li>
             <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
+            <li><a onclick="AjaxOtvori('Administrator.php')">Administrator</a></li>
         </ul>
     </nav>
 </div>
 
 <div id="sredina">
         <?php
+        function testirajPodatak(&$podatak)
+        {
+            $podatak = trim($podatak);
+            $podatak = stripcslashes($podatak);
+            $podatak = htmlspecialchars($podatak);
+        }
         $naziv = $_GET['naslov'];
         if(isset($_GET['komentar']) && ($_GET['komentar'] != null))
         {
@@ -53,8 +60,11 @@
             $sql = $konekcija->prepare("INSERT INTO komentar (Komentator, Email, Poruka, NovostID) VALUES (?, ?, ?, ?)");
             $sql->bind_param("sssi", $Komentator, $Email, $Poruka, $NovostID);
             $Komentator = $_GET['autorKomentara'];
+            testirajPodatak($Komentator);
             $Email = $_GET['email'];
+            testirajPodatak($Email);
             $Poruka = $_GET['komentar'];
+            testirajPodatak($Poruka);
             $NovostID = $_GET['ID'];
             $sql->execute();
             $sql->close();
@@ -99,7 +109,7 @@
                 <label class='labelaKomentar'>Autor:</label> <input type="text" name="autorKomentara" class="komentarUnosi"><br>
                 <label class='labelaKomentar'>Mail:</label> <input type="text" name="email" class="komentarUnosi"><br><br>
                 <label class='labelaKomentar'>Poruka:</label> <textarea id="komentarPoruka" name="komentar"></textarea><br><br>
-                <input type="submit" value="Pošalji" id="submitButton5">
+                <input type="submit" value="Pošalji" class="submitButton5">
             </fieldset>
         </form>
         <br>

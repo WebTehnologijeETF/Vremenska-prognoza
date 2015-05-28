@@ -206,7 +206,7 @@ textarea{
     font-size: large;
 }
 
-#submitButton, #submitButton5{
+#submitButton, .submitButton5{
     margin-left: 40%;
     width: 10%;
     height: 30px;
@@ -215,7 +215,7 @@ textarea{
     color: darkblue;
 }
 
-#submitButton5{
+.submitButton5{
     margin-left: 45%;
 }
 
@@ -237,7 +237,7 @@ textarea{
     color: darkblue;
 }
 
-#submitButton:hover, #resetButton:hover, #submitButton3:hover, #submitButton5:hover{
+#submitButton:hover, #resetButton:hover, #submitButton3:hover, .submitButton5:hover{
     background-color: yellow;
 }
 
@@ -663,4 +663,55 @@ legend{
     font-family: 'Rokkitt', serif;
     color: darkblue;
     font-size: medium;
+}
+
+.loginAdmin {
+    font-family: 'Rokkitt', serif;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+.loginAdmin input[type=text]{
+    width: 30%;
+}
+
+.loginAdmin input[type=password]{
+    width: 30%;
+}
+
+.dodavanje{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 80%;
+    border: white solid medium;
+    font-family: 'Rokkitt', serif;
+}
+
+.dodavanje legend{
+    font-family: 'Rokkitt', serif;
+    color: darkblue;
+}
+
+.novostUnos{
+    width: 30%;
+}
+
+.prikazKomentara{
+    margin-left: -20%;
+}
+
+.prikazPorukeKomentara{
+    color: darkblue;
+}
+
+.unosID{
+    margin-left: 38.5%;
+    color: darkblue;
+}
+
+#naslovnaVijest{
+    margin-left: 8%;
 }

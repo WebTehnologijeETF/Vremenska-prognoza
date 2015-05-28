@@ -10,7 +10,7 @@ if ($konekcija->connect_error) {
     die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
 }
 
-$sql = "SELECT a.Ime, a.Prezime, n.* FROM Autor a, Novost n WHERE a.Id = n.AutorID";
+$sql = "SELECT a.Ime, a.Prezime, n.* FROM autor a, novost n WHERE a.Id = n.AutorID";
 $rezultat = $konekcija->query($sql);
 $konekcija->close();
 
@@ -82,6 +82,7 @@ echo <<<_HTML_
             <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a></li>
             <li><a onclick="AjaxOtvori('Kontakt.php')">Kontakt</a></li>
             <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
+            <li><a onclick="AjaxOtvori('Administrator.php')">Administrator</a></li>
         </ul>
     </nav>
 </div>

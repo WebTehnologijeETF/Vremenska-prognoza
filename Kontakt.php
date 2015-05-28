@@ -150,7 +150,8 @@ echo <<<_HTML_
             <li><a onclick="AjaxOtvori('Hidrologija.html')">Hidrologija</a></li>
             <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a></li>
             <li><a onclick="AjaxOtvori('Kontakt.php')">Kontakt</a></li>
-            <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
+            <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a></li>
+            <li><a onclick="AjaxOtvori('Administrator.php')">Administrator</a></li>
         </ul>
     </nav>
 </div>
