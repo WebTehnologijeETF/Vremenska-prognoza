@@ -5,6 +5,7 @@ $primjer = "";
 $brojac = 0;
 
 $konekcija = new mysqli("localhost", "root", "", "vremenskaprognoza");
+$konekcija->set_charset("utf8");
 if ($konekcija->connect_error) {
     die("Nemoguće se povezati sa bazom!" . $konekcija->connect_error);
 }
@@ -26,6 +27,7 @@ usort($novosti, function($a, $b) {
 
 for ($i = 0; $i < $brojac; $i++)
 {
+    $ID = $novosti[$i]["Id"];
     $autor = $novosti[$i]["Ime"] . " " . $novosti[$i]["Prezime"];
     $naslov = $novosti[$i]["Naslov"];
     $slika = $novosti[$i]["Slika"];
@@ -38,17 +40,18 @@ for ($i = 0; $i < $brojac; $i++)
     $primjer .= "
     <form method='get' action='PrikazVijest.php'>
            <div class='listItem'>
-           <input type='hidden' name='autor' value='$autor'>
-          <input type='hidden' name='naslov' value='$naslov'>
-          <input type='hidden' name='slika' value='$slika'>
-          <input type='hidden' name='sadržaj' value= '$sadrzajNovosti'>
-          <input type='hidden' name='datum' value='$datum'>
-          <input type='hidden' name='detaljno' value='$detaljnijeNovosti'>
-          <img src=$slika alt=$slika>
-          <h3 class='naslov'>$naslov</h3>
-          <p>$sadrzajNovosti</p>
-          <br>
-          <p class='nastaviLink'><span> $autor,  $datum  </span> <input style='$vidljivost' type='submit' id='submitButton4' value='Detaljnije>>'>
+            <input type='hidden' name='ID' value='$ID'>
+            <input type='hidden' name='autor' value='$autor'>
+            <input type='hidden' name='naslov' value='$naslov'>
+            <input type='hidden' name='slika' value='$slika'>
+            <input type='hidden' name='sadržaj' value= '$sadrzajNovosti'>
+            <input type='hidden' name='datum' value='$datum'>
+            <input type='hidden' name='detaljno' value='$detaljnijeNovosti'>
+            <img src=$slika alt=$slika>
+            <h3 class='naslov'>$naslov</h3>
+            <p>$sadrzajNovosti</p>
+            <br>
+            <p class='nastaviLink'><span> $autor,  $datum  </span> </p><input style='$vidljivost' type='submit' id='submitButton4' value='Detaljnije>>'>
           </div>
         </form>";
 }

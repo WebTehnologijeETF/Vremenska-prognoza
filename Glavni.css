@@ -206,13 +206,17 @@ textarea{
     font-size: large;
 }
 
-#submitButton{
+#submitButton, #submitButton5{
     margin-left: 40%;
     width: 10%;
     height: 30px;
     font-family: 'Rokkitt', serif;
     font-size: large;
     color: darkblue;
+}
+
+#submitButton5{
+    margin-left: 45%;
 }
 
 #resetButton{
@@ -233,10 +237,9 @@ textarea{
     color: darkblue;
 }
 
-#submitButton:hover, #resetButton:hover, #submitButton3:hover{
+#submitButton:hover, #resetButton:hover, #submitButton3:hover, #submitButton5:hover{
     background-color: yellow;
 }
-
 
 #dnevniSati{
     width: 15%;
@@ -574,6 +577,7 @@ th, td {
 
 #submitButton4:hover{
     color: darkblue;
+    cursor: pointer;
 }
 
 #naslovVijesti{
@@ -597,4 +601,66 @@ th, td {
 
 #sadrzajNovosti{
     text-align: justify;
+}
+
+#komentarBroj:hover, .spanKomentarAutor:hover{
+    text-decoration: underline;
+    color: yellow;
+    cursor: pointer;
+}
+
+#prikazKomentari{
+    display: none;
+    border: #ffffff solid medium;
+    font-family: 'Rokkitt', serif;
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jedanKomentar, .jedanKomentarUnos{
+    border: white solid medium;
+    font-family: 'Rokkitt', serif;
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jedanKomentarUnos{
+    border: darkblue solid medium;
+    width: 90%;
+}
+
+.spanKomentar, .spanKomentarAutor, .spanKomentarPoruka{
+    font-family: 'Rokkitt', serif;
+    color: darkblue;
+}
+
+.spanKomentarPoruka{
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    width: 80%;
+}
+
+legend{
+    font-family: 'Rokkitt', serif;
+    color: darkblue;
+    font-weight: bold;
+}
+
+#komentarPoruka{
+    font-family: 'Rokkitt', serif;
+    color: darkblue;
+    font-style: italic;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.komentarUnosi{
+    width: 30.5%;
+    font-family: 'Rokkitt', serif;
+    color: darkblue;
+    font-size: medium;
 }
