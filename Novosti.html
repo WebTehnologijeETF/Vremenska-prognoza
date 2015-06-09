@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Administrator Panel</title>
+    <link rel="stylesheet" href="Glavni.css">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <script src="Javascript/AjaxOtvori.js"></script>
+    <script src="Javascript/Servisi.js"></script>
+    <script>pokreniSesiju()</script>
+</head>
+<body onload="popuniNovostiDatalist()">
+<p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
+<header>
+    <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
+</header>
+
+<div id="navigateDiv">
+    <br>
+    <nav>
+        <ul>
+            <li><a onclick="AjaxOtvori('Index.html')">Naslovna</a></li>
+            <li><a onclick="AjaxOtvori('AdministratorPanel.html')">Dashboard</a></li>
+            <li><a onclick="AjaxOtvori('Novosti.html')">Novosti</a></li>
+            <li><a onclick="AjaxOtvori('Komentari.html')">Komentari</a></li>
+            <li><a onclick="AjaxOtvori('Korisnici.html')">Korisnici</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="sredina">
+    <form>
+        <fieldset class="dodavanje">
+            <legend>Dodavanje novosti</legend>
+            <label>Naslov (*): </label> <input class="novostUnos" type="text" name="naslov" id="novostNaslov"><br><br>
+            <label>URL slike (*): </label> <input class="novostUnos" type="text" name="url" id="novostSlikaURL"><br><br>
+            <label>Uvod u novost (*): </label><input class="novostUnos" type="text" name="uvod" id="novostUvod"><br><br>
+            <label>Detaljna novost: </label><textarea name="detaljna" id="novostDetaljno"></textarea><br><br>
+            <label>Ime autora (*): </label><input class="novostUnos" type="text" name="imeAutora" id="novostImeAutora"><br><br>
+            <label>Prezime autora (*): </label><input class="novostUnos" type="text" name="prezimeAutora" id="novostPrezimeAutora"><br><br>
+            <input type="button" value="Dodaj" class="submitButton5" onclick="dodajNovost()">
+        </fieldset>
+    </form>
+    <datalist id="SveNovosti">
+    </datalist>
+    <form action="UrediNovostForma.html" method="get">
+        <fieldset class="dodavanje">
+            <legend>Uređivanje novosti</legend>
+            <p>Izaberite vijest koju želite uređivati:</p>
+            <label>Naslov: </label> <input class="novostUnos" type="text" name="naslov" list="SveNovosti"><br><br>
+            <input type="submit" value="Uredi" class="submitButton5">
+        </fieldset>
+    </form>
+    <form>
+        <fieldset class="dodavanje">
+            <legend>Brisanje novosti</legend>
+            <p>Izaberite vijest koju želite izbrisati:</p>
+            <label>Naslov: </label> <input id="izabranaNovostZaBrisanje" class="novostUnos" type="text" name="naslov" list="SveNovosti"><br><br>
+            <input type="button" value="Obriši" class="submitButton5" onclick="obrisiNovost()">
+        </fieldset>
+    </form>
+<br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Administrator Panel</title>
+    <link rel="stylesheet" href="Glavni.css">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <script src="Javascript/AjaxOtvori.js"></script>
+    <script src="Javascript/Servisi.js"></script>
+    <script>pokreniSesiju()</script>
+</head>
+<body onload="popuniKorisnickiDatalist()">
+<p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
+<header>
+    <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
+</header>
+
+<div id="navigateDiv">
+    <br>
+    <nav>
+        <ul>
+            <li><a onclick="AjaxOtvori('Index.html')">Naslovna</a></li>
+            <li><a onclick="AjaxOtvori('AdministratorPanel.html')">Dashboard</a></li>
+            <li><a onclick="AjaxOtvori('Novosti.html')">Novosti</a></li>
+            <li><a onclick="AjaxOtvori('Komentari.html')">Komentari</a></li>
+            <li><a onclick="AjaxOtvori('Korisnici.html')">Korisnici</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="sredina">
+    <form>
+        <fieldset class="dodavanje">
+            <legend>Dodavanje korisnika</legend>
+            <label>Username (*): </label> <input class="novostUnos" type="text" name="username" id="korisnikUser"><br><br>
+            <label>Password (*): </label> <input class="novostUnos" type="password" name="pss" id="korisnikPass"><br><br>
+            <label>Mail adresa (*): </label><input class="novostUnos" type="text" name="mailAdresa" id="korisnikMail"><br><br>
+            <label>Administrator: </label><input type="checkbox" name="administrator" id="administrator"><br><br>
+            <input type="button" value="Dodaj" class="submitButton5" onclick="dodajKorisnika()">
+        </fieldset>
+    </form>
+    <datalist id="SviKorisnici">
+    </datalist>
+    <form method="get" action="UrediKorisnikaForma.html">
+        <fieldset class="dodavanje">
+            <legend>Uređivanje korisnika</legend>
+            <p>Izaberite korisnika kojeg želite uređivati:</p>
+            <label>Username: </label> <input class="novostUnos" type="text" name="korisnikUsername" list="SviKorisnici"><br><br>
+            <input type="submit" value="Uredi" class="submitButton5">
+        </fieldset>
+    </form>
+    <form>
+        <fieldset class="dodavanje">
+            <legend>Brisanje korisnika</legend>
+            <p>Izaberite korisnika kojeg želite izbrisati:</p>
+            <label>Username: </label> <input id="izabraniKorisnikZaBrisanje" class="novostUnos" type="text" name="username" list="SviKorisnici"><br><br>
+            <input id="brisanjeKorisnika" type="button" value="Obriši" class="submitButton5" onclick="obrisiKorisnika()">
+        </fieldset>
+    </form>
+    <br>
+</div>
+
+</body>
+</html>

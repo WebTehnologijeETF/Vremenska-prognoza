@@ -9,7 +9,7 @@
     <script src="Javascript/Servisi.js"></script>
     <script>pokreniSesiju()</script>
 </head>
-<body>
+<body onload="ucitajNovostZaEdit(getQueryVariable('naslov'))">
 <p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
 <header>
     <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
@@ -29,7 +29,20 @@
 </div>
 
 <div id="sredina">
-    <h1>Dobrodošli u administratorski panel!</h1>
+    <form>
+        <fieldset class="dodavanje">
+            <legend>Uredi novost</legend>
+            <input type="hidden" name="naslov">
+            <label>Naslov: </label> <input class="novostUnos" type="text" name="noviNaslov" id="noviNaslov"><br><br>
+            <label>URL slike: </label> <input class="novostUnos" type="text" name="url" id="noviUrl"><br><br>
+            <label>Uvod u novost: </label><input class="novostUnos" type="text" name="uvod" id="noviUvod"><br><br>
+            <label>Detaljna novost: </label><textarea name="detaljna" id="novaDetaljna"></textarea><br><br>
+            <label>Ime autora: </label><input class="novostUnos" type="text" name="imeAutora" id="novoIme"><br><br>
+            <label>Prezime autora: </label><input class="novostUnos" type="text" name="prezimeAutora" id="novoPrezime"><br><br>
+            <input type="button" value="Pošalji" class="submitButton5" onclick="urediNovost(getQueryVariable('naslov'))">
+        </fieldset>
+    </form>
+    <br>
 </div>
 
 </body>

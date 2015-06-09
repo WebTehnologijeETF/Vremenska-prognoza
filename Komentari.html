@@ -9,7 +9,7 @@
     <script src="Javascript/Servisi.js"></script>
     <script>pokreniSesiju()</script>
 </head>
-<body>
+<body onload="prikaziNovostKomentare('*')">
 <p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
 <header>
     <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
@@ -29,7 +29,7 @@
 </div>
 
 <div id="sredina">
-    <h1>Dobrodošli u administratorski panel!</h1>
+    <h2 id="naslovnaVijest">Lista svih novosti sa komentarima: </h2>
 </div>
 
 </body>

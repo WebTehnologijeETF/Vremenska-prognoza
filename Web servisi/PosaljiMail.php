@@ -18,7 +18,7 @@ $email->addTo($send_to)
 try {
     $sendgrid->send($email);
     echo "<script>alert('Uspješno ste poslali mail!')</script>";
-    echo file_get_contents("Index.php");
+    echo file_get_contents("Index.html");
 } catch(\SendGrid\Exception $e) {
     echo $e->getCode();
     foreach($e->getErrors() as $er) {

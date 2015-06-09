@@ -9,7 +9,7 @@
     <script src="Javascript/Servisi.js"></script>
     <script>pokreniSesiju()</script>
 </head>
-<body>
+<body onload="ucitajKorisnikaZaEdit(getQueryVariable('korisnikUsername'))">
 <p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
 <header>
     <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
@@ -29,7 +29,17 @@
 </div>
 
 <div id="sredina">
-    <h1>Dobrodošli u administratorski panel!</h1>
+    <form>
+        <fieldset class="dodavanje">
+            <legend>Uredi korisnika</legend>
+            <input type="hidden" name="korisnikUsername">
+            <label>Username (*): </label> <input class="novostUnos" type="text" name="noviUsername" id="noviUsername"><br><br>
+            <label>Password (*): </label> <input class="novostUnos" type="text" name="noviPass" id="noviPass"><br><br>
+            <label>Mail adresa (*): </label><input class="novostUnos" type="text" name="noviMail" id="noviMail"><br><br>
+            <input type="button" value="Pošalji" class="submitButton5" id="odradiUredi" onclick="urediKorisnika(getQueryVariable('korisnikUsername'))">
+        </fieldset>
+    </form>
+    <br>
 </div>
 
 </body>

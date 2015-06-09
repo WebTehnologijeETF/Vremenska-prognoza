@@ -165,7 +165,9 @@ p{
     width: 70%;
     background-color: cornflowerblue;
     height: 74%;
-    border: medium solid white
+    border: medium solid white;
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 fieldset{
@@ -230,7 +232,7 @@ textarea{
 
 #submitButton3{
     margin-left: 40%;
-    width: 12%;
+    width: 15%;
     height: 30px;
     font-family: 'Rokkitt', serif;
     font-size: large;
@@ -462,7 +464,7 @@ li.active a, li.active a:hover {
     overflow-y: auto;
 }
 
-.tab {
+.tab, #AdminDashboard {
     display:none;
 }
 
@@ -547,8 +549,8 @@ th, td {
 
 #kontaktPrikaz{
     margin-left: auto;
-    margin-right: 12%;
-    width: 92.5%;
+    margin-right: auto;
+    width: 90%;
     background-color: cornflowerblue;
     border: medium solid white
 }
@@ -603,7 +605,7 @@ th, td {
     text-align: justify;
 }
 
-#komentarBroj:hover, .spanKomentarAutor:hover{
+#komentarBroj:hover, .spanKomentarAutor:hover, #akcijaPrijava:hover{
     text-decoration: underline;
     color: yellow;
     cursor: pointer;
@@ -714,4 +716,30 @@ legend{
 
 #naslovnaVijest{
     margin-left: 8%;
+}
+
+#staro, #kontaktProvjera{
+    display:none;
+}
+
+#korisnikPrijava{
+    float: right;
+    margin-right: 0.5%;
+    margin-top: -1%;
+}
+
+#akcijaPrijava{
+    float: right;
+    margin-right: 5%;
+    margin-top: -1%;
+}
+
+#anonimnostLabela, #anonimnost{
+    display: none;
+}
+
+#anonimnost{
+    float: right;
+    margin-top: -2%;
+    margin-right: 48%;
 }

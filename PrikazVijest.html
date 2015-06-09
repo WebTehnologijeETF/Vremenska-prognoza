@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Glavni.css">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <script src="Javascript/AjaxOtvori.js"></script>
+    <script src="Javascript/Servisi.js"></script>
+    <script>pokreniSesiju()</script>
+    <title>Naslovna</title>
+</head>
+<body onload="vratiNovostPrikaz(getQueryVariable('ID'))">
+<p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
+<header>
+    <img src="Images/HMZBIH.png" id="logo" alt="Images/HMZBIH.png"> <h1>Hidrometeorološki zavod BiH</h1>
+</header>
+
+<div id="navigateDiv">
+    <br>
+    <nav>
+        <ul>
+            <li><a onclick="AjaxOtvori('Index.html')">Naslovna</a></li>
+            <li><a onclick="AjaxOtvori('Meteorologija.html')">Meteorologija</a></li>
+            <li><a onclick="AjaxOtvori('Hidrologija.html')">Hidrologija</a></li>
+            <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a></li>
+            <li><a onclick="AjaxOtvori('Kontakt.html')">Kontakt</a></li>
+            <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
+            <li id="AdminDashboard"><a onclick="AjaxOtvori('AdministratorPanel.html')">Administrator</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="sredina">
+
+    <br>
+    <fieldset id="vijest">
+        <img id="prikazanVijestSlika">
+        <p id="sadrzajNovosti"></p>
+    </fieldset>
+    <p id="autorVijest"></p>
+    <p id="datumVijest"></p>
+
+    <p id="komentarBroj" onclick="otkrij()">Broj komentara:</p>
+
+    <div id="prikazKomentari">
+        <br>
+        <form>
+            <fieldset class="jedanKomentarUnos">
+                <legend>Novi komentar</legend>
+                <label class='labelaKomentar'>Autor:</label> <input type="text" name="autorKomentara" class="komentarUnosi" id="autorKomentara"><br>
+                <label class='labelaKomentar'>Mail:</label> <input type="text" name="email" class="komentarUnosi" id="email"><br><br>
+                <label class='labelaKomentar'>Poruka:</label> <textarea id="komentarPoruka" name="komentar"></textarea><br><br>
+                <label class='labelaKomentar' id="anonimnostLabela">Anonimno:</label> <input type="checkbox" class="komentarUnosi" id="anonimnost"><br><br>
+                <input type="button" value="Pošalji" class="submitButton5" onclick="posaljiKomentar(getQueryVariable('ID'))">
+            </fieldset>
+        </form>
+        <br>
+        <p>Stari komentari:</p>
+        <fieldset id="staro">
+        </fieldset>
+    </div>
+    <br>
+</div>
+
+</body>
+</html>

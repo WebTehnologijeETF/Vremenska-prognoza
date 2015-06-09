@@ -5,12 +5,15 @@
     <link rel="stylesheet" href="Glavni.css">
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="ArhivaStablo.js"></script>
-    <script src="AjaxOtvori.js"></script>
+    <script src="Javascript/ArhivaStablo.js"></script>
+    <script src="Javascript/AjaxOtvori.js"></script>
+    <script src="Javascript/Servisi.js"></script>
+    <script>pokreniSesiju()</script>
     <link rel="stylesheet" href="/resources/demos/style.css">
     <title>Arhiva</title>
 </head>
 <body onload="ucitajDokument()">
+<p id="akcijaPrijava" onclick="korisnickiRacunKlik()">(Prijavi se)</p><p id="korisnikPrijava">Niste prijavljeni na sistem</p>
 <header>
     <img src="Images/HMZBIH.png" alt="Images/HMZBIH.png" id="logo"> <h1>Hidrometeorološki zavod BiH</h1>
 </header>
@@ -19,13 +22,13 @@
     <br>
     <nav>
         <ul>
-            <li><a onclick="AjaxOtvori('Index.php')">Naslovna</a></li>
+            <li><a onclick="AjaxOtvori('Index.html')">Naslovna</a></li>
             <li><a onclick="AjaxOtvori('Meteorologija.html')">Meteorologija</a></li>
             <li><a onclick="AjaxOtvori('Hidrologija.html')">Hidrologija</a></li>
             <li><a onclick="AjaxOtvori('Projekti.html')">Projekti</a></li>
-            <li><a onclick="AjaxOtvori('Kontakt.php')">Kontakt</a></li>
+            <li><a onclick="AjaxOtvori('Kontakt.html')">Kontakt</a></li>
             <li><a onclick="AjaxOtvori('Arhiva.html')">Arhiva</a> </li>
-            <li><a onclick="AjaxOtvori('Administrator.php')">Administrator</a></li>
+            <li id="AdminDashboard"><a onclick="AjaxOtvori('AdministratorPanel.html')">Administrator</a></li>
         </ul>
     </nav>
 </div>
